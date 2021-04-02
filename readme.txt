@@ -1,1 +1,1 @@
-This is a CUDA repository for my GPU_Programming Course 
+This is a CUDA repository from my GPU_Programmierung 
