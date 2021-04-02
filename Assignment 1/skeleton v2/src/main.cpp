@@ -1,13 +1,7 @@
 /// @file
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// Copyright (C) 2019/20      Christian Lessig, Otto-von-Guericke Universitaet Magdeburg
-///
-////////////////////////////////////////////////////////////////////////////////////////////////////
-///
 ///  module     : Assignment 1
-///
-///  author     : {clauson,lessig}@isg.cs.ovgu.de
 ///
 ///  project    : GPU Programming
 ///
@@ -59,7 +53,6 @@ MatrixMultiplicationSerial(const double* A, const double* B,
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //! Parallel version for Matrix-Matrix multiplication AxB = C
-//! (you are allowed to change the arguments to the function)
 //!
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void multiply_threading(double* C, const int num_threads, const double* A, const double* B, const unsigned int size, unsigned int tid, const int op, const int rest) {
@@ -137,9 +130,10 @@ main(int /*argc*/, char** /*argv*/) {
 		//std::cout << "Joining thread " << i << std::endl;
 		threads[i].join();
 	}
+	//exec time recording
 	double time = std::chrono::duration_cast<TimeT>(std::chrono::steady_clock::now() - start).count();
 #endif
-
+	//print exec time 
 	std::cout << time << " ms" << std::endl;
 
 	// correctness check
